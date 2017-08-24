@@ -12,15 +12,16 @@ public interface TransporterRepository extends JpaNameRepository<Transporter, In
 	
 	@Query("SELECT b.name FROM Brand b")
 	List<String> findAllBrand();
-	
+
 	@Query("SELECT c.name FROM City c")
 	List<String> findAllCity();
-	
+
 	@Query("SELECT m.name FROM Model m")
 	List<String> findAllModel();
 	
-	@Query("SELECT new kovalchuk.model.view.TransporterView(t.id, t.rate, t.maxWeight, t.photoUrl, t.version, t.name, t.count, t.age, t.phone, b.name, m.name, t.carAge, cArrive.name, t.dateArrive, t.status) FROM Transporter t JOIN t.model m JOIN t.cityArrive cArrive JOIN t.brand b")
+	@Query("SELECT new kovalchuk.model.view.TransporterView(t.rate, t.maxWeight, t.photoUrl, t.version, t.name, t.count, t.age, t.phone, b.name, m.name, t.carAge, cArrive.name) FROM Transporter t JOIN t.brand b JOIN t.model m JOIN t.cityArrive cArrive")
 	List<TransporterView> findAllView();
+
 
 
 }

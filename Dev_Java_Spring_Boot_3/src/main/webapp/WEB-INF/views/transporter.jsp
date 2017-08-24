@@ -51,6 +51,12 @@
 		<div class="row">
 			<div class="col-12">
 				<form action="/admin/transporter" method="POST">
+				     <div class="form-group row">
+						<label class="col-2 col-form-label">Name:</label>
+						<div class="col-10">
+							<input name="name" class="form-control"> 
+						</div>
+					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Rate:</label>
 						<div class="col-10">
@@ -158,6 +164,7 @@
 			<div class="col-12">
 				<table class="table table-bordered">
 					<tr>
+					    <th class="text-center">Name</th>
 						<th class="text-center">Rate</th>
 						<th class="text-center">Max Weight</th>
 						<th class="text-center">Photo Url</th>
@@ -175,6 +182,7 @@
 					</tr>
 					<c:forEach var="transporter" items="${transporters}">
 						<tr>
+					    	<td>${transporter.name}</td>
 							<td>${transporter.rate}</td>
 							<td>${transporter.maxWeight}</td>
 							<td>${transporter.photoUrl}</td>

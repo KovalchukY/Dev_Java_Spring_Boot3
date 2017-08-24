@@ -1,0 +1,15 @@
+@charset "UTF-8";
+
+body{
+        background-color: blue;
+        background-origin: border-box;
+        background-clip: border-box;
+        background-size:cover;
+}
+p{
+        text-align: justify;
+        text-indent: 35px;
+        color: aliceblue;
+        font-size: 300%;
+        font-weight: 700;
+}

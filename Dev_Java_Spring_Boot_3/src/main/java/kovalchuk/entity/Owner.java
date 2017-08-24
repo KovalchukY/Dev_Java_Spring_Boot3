@@ -15,6 +15,10 @@ public class Owner extends AbstractEntityName{
 	public Owner() {
 	}
 	
+	public Owner(String name) {
+		super(name);
+	}
+	
 	public Owner(String phone, int count, String address) {
 		this.phone = phone;
 		this.count = count;

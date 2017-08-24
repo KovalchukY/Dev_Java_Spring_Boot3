@@ -3,6 +3,7 @@ package kovalchuk.controller.admin;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kovalchuk.entity.Brand;
 import kovalchuk.entity.City;
-import kovalchuk.entity.Status;
 import kovalchuk.entity.Transporter;
 import kovalchuk.service.BrandService;
 import kovalchuk.service.CityService;
@@ -57,29 +57,32 @@ public class AdminTransporterController {
 		return "redirect:/admin/transporter";
 	}
 	
-//	@PostMapping
-//	public String save(@RequestParam BigDecimal rate,
-//			@RequestParam int maxWeight,
-//			@RequestParam String photoUrl,
-//			@RequestParam int version,
-//			@RequestParam int count,
-//			@RequestParam int age,
-//			@RequestParam String phone,
-//			@RequestParam String brand,
-//			@RequestParam String model,
-//			@RequestParam int carAge,
-//			@RequestParam String cityArrive,
-//			@RequestParam LocalDateTime dateArrive,
-//			@RequestParam String status){
-//		
-//		Brand brand1 = brandService.findByName(brand);
-//		City cityAr = cityService.findByName(cityArrive);
-//	//	Model model1 = modelService.findByName(model);
-//		
-//		Transporter transporter = new Transporter(rate, maxWeight, photoUrl, version, count, age, phone,
-//				brand, model, carAge, cityArrive, dateArrive, Status status);
-//		service.save(transporter);
-//		return "redirect:/admin/transporter";
-//	}
+	@PostMapping
+	public String save(@RequestParam BigDecimal rate,
+			           @RequestParam int maxWeight,
+			           @RequestParam String photoUrl,
+			           @RequestParam int version,
+		               @RequestParam int count,
+			           @RequestParam int age,
+			           @RequestParam String phone,
+			           @RequestParam String brand,
+			           @RequestParam String model,
+			           @RequestParam int carAge,
+			           @RequestParam String cityArrive,
+			           @RequestParam LocalDateTime dateArrive,
+			           //@RequestParam String status,
+			           @RequestParam String name){
+		              
+		Brand brand1 = brandService.findByName(brand);
+		City cityAr = cityService.findByName(cityArrive);
+		kovalchuk.entity.Model model1 = modelService.findByName(model);
+		
+		
+		Transporter transporter = new Transporter(rate, maxWeight, photoUrl, version, count, age, phone,
+				brand1, model1, carAge, cityAr, dateArrive);
+	    transporter.setName(name);
+		service.save(transporter);
+		return "redirect:/admin/transporter";
+	}
 
 }

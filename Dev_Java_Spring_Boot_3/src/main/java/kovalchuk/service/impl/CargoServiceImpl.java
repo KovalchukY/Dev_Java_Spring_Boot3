@@ -42,4 +42,5 @@ public class CargoServiceImpl implements CargoService {
 	public void delete(Integer id) {
 		repository.delete(id);
 	}
+	
 }

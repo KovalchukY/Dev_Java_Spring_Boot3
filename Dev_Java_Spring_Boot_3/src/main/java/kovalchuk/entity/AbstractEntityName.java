@@ -5,6 +5,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class AbstractEntityName extends AbstractEntity  {
 	
+	
 	private String name;
 
 	public AbstractEntityName() {

@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kovalchuk.entity.Owner;
 import kovalchuk.service.OwnerService;
 
-
-
 @Controller
 @RequestMapping("/admin/owner")
 public class AdminOwnerController {
@@ -29,7 +27,7 @@ public class AdminOwnerController {
 	}
 	
 	@GetMapping("/delete/{id}")
-	public String show(@PathVariable Integer id){
+	public String delete(@PathVariable Integer id){
 		service.delete(id);
 		return "redirect:/admin/owner";
 	}
@@ -37,8 +35,10 @@ public class AdminOwnerController {
 	@PostMapping
 	public String save(@RequestParam String phone,
 			@RequestParam int count,
-			@RequestParam String address){
+			@RequestParam String address,
+			@RequestParam String name){
 		Owner owner = new Owner(phone, count, address);
+		owner.setName(name);
 		service.save(owner);
 		return "redirect:/admin/owner";
 	}
