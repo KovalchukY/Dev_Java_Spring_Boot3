@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib  prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -50,105 +51,89 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-12">
-				<form action="/admin/transporter" method="POST">
+				<form:form action="/admin/transporter" method="POST"  modelAttribute="transporter">
 				     <div class="form-group row">
 						<label class="col-2 col-form-label">Name:</label>
 						<div class="col-10">
-							<input name="name" class="form-control"> 
+							<form:input path="name" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Rate:</label>
 						<div class="col-10">
-							<input name="rate" class="form-control"> 
+							<form:input path="rate" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Max Weight:</label>
 						<div class="col-10">
-							<input name="maxWeight" class="form-control"> 
+							<form:input path="maxWeight" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Photo Url:</label>
 						<div class="col-10">
-							<input name="photoUrl" class="form-control"> 
+							<form:input path="photoUrl" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Version:</label>
 						<div class="col-10">
-							<input name="version" class="form-control"> 
+							<form:input path="version" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Count:</label>
 						<div class="col-10">
-							<input name="count" class="form-control"> 
+							<form:input path="count" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Age:</label>
 						<div class="col-10">
-							<input name="age" class="form-control"> 
+							<form:input path="age" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Phone:</label>
 						<div class="col-10">
-							<input name="phone" class="form-control"> 
+							<form:input path="phone" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Brand:</label>
 						<div class="col-10">
-							<select name="brand" class="form-control">
-								<c:forEach var="brand" items="${brands}">
-									<option value="${brand}">${brand}</option>
-								</c:forEach>
-							</select>
+							<form:select path="brand" items="${brands}" class="form-control"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Model:</label>
 						<div class="col-10">
-							<select name="model" class="form-control">
-								<c:forEach var="model" items="${models}">
-									<option value="${model}">${model}</option>
-								</c:forEach>
-							</select>
+							<form:select path="model" items="${models}" class="form-control"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Car Age:</label>
 						<div class="col-10">
-							<input name="carAge" class="form-control"> 
+							<form:input path="carAge" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">City Arrive:</label>
 						<div class="col-10">
-							<select name="cityArrive" class="form-control">
-								<c:forEach var="city" items="${cities}">
-									<option value="${city}">${city}</option>
-								</c:forEach>
-							</select>
+							<form:select path="cityArrive" items="${cities}" class="form-control"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Date Arrive:</label>
 						<div class="col-10">
-							<input name="dateArrive" class="form-control"> 
+							<form:input path="dateArrive" class="form-control"/> 
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Status:</label>
 						<div class="col-10">
-							<select name="status" class="form-control">
-								<c:forEach var="status" items="${statuss}">
-									<option value="${status}">${status}</option>
-								</c:forEach>
-							</select>
+							<form:select path="status" class="form-control"/>
 						</div>
 					</div>
 					
@@ -157,7 +142,7 @@
         					<button type="submit" class="btn btn-outline-success btn-sm">Save</button>
       					</div>
 					</div>
-				</form>
+				</form:form>
 			</div>
 		</div>
 		<div class="row">

@@ -47,8 +47,8 @@ public class Owner extends AbstractEntityName{
 		return count;
 	}
 
-	public void setCount(int count) {
-		this.count = count;
+	public void setCount(int string) {
+		this.count = string;
 	}
 
 	public String getAddress() {

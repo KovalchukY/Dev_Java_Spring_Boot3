@@ -24,6 +24,7 @@ public class CargoView {
 	
 	private BigDecimal price;
 	
+	
 	public CargoView(Integer id, String goods, int weight, int height, int width, int length, String cityFrom, String cityTo, BigDecimal price) {
 		this.id = id;
 		this.goods = goods;
@@ -35,7 +36,7 @@ public class CargoView {
 		this.cityTo = cityTo;
 		this.price = price;
 	}
-
+	
 	public Integer getId() {
 		return id;
 	}

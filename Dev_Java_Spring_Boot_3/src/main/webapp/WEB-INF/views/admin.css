@@ -1,0 +1,29 @@
+*{
+        margin: 0;
+        padding: 0;
+}
+h2{
+        border-bottom: 2px solid white;
+        text-align: center;
+        color: red;
+}
+p{
+        text-align: justify;
+        text-indent: 35px;
+        color: aliceblue;
+        font-size: 120%;
+        font-weight: 700;
+}
+body{
+        background-image: url(http://www.worldsnooker.com/wp-content/uploads/2015/02/WOCH2198.jpg);
+        background-repeat: no-repeat;
+        background-origin: border-box;
+        background-clip: border-box;
+        background-size:cover;
+}
+p.white{
+    color: aliceblue;
+}
+p.pink{
+    color:deepskyblue;
+}

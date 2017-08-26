@@ -1,55 +1,44 @@
-package kovalchuk.model.view;
+package kovalchuk.model.request;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
-public class TransporterView {
+import kovalchuk.entity.Brand;
+import kovalchuk.entity.City;
+import kovalchuk.entity.Model;
+import kovalchuk.entity.Status;
 
+public class TransporterRequest {
+	
 	private Integer id;
-	
-	private BigDecimal rate;
-	
-	private int maxWeight;
-	
-	private String photoUrl;
-	
-	private int version;
-	
+		
 	private String name;
 	
+	private BigDecimal rate;
+
+	private int maxWeight;
+
+	private String photoUrl;
+
+	private int version;
+
 	private int count;
-	
+
 	private int age;
 	
 	private String phone;
 	
-	private String brand;
+	private Brand brand;
 	
-	private String model;
-	
+	private Model model;
+
 	private int carAge;
 	
-	private String cityArrive;
+	private City cityArrive;
+
+	private LocalDateTime dateArrive;
 	
-	private String dateArrive;
-	
-	private String status;
-	
-		public TransporterView(BigDecimal rate, int maxWeight, String photoUrl, int version, String name, 
-				                  int count, int age, String phone, String brand, String model, int carAge, String cityArrive) {
-			
-			this.rate = rate;
-			this.maxWeight = maxWeight;
-			this.photoUrl = photoUrl;
-			this.version = version;
-			this.name = name;
-			this.count = count;
-		    this.age = age;
-		    this.phone = phone;
-		    this.brand = brand;
-		    this.model = model;
-		    this.carAge = carAge;
-		    this.cityArrive = cityArrive;
-	}
+	private Status status;
 
 	public Integer getId() {
 		return id;
@@ -58,7 +47,14 @@ public class TransporterView {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public String getName() {
+		return name;
+	}
 
+	public void setName(String name) {
+		this.name = name;
+	}
 	public BigDecimal getRate() {
 		return rate;
 	}
@@ -91,14 +87,6 @@ public class TransporterView {
 		this.version = version;
 	}
 
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
 	public int getCount() {
 		return count;
 	}
@@ -123,19 +111,19 @@ public class TransporterView {
 		this.phone = phone;
 	}
 
-	public String getBrand() {
+	public Brand getBrand() {
 		return brand;
 	}
 
-	public void setBrand(String brand) {
+	public void setBrand(Brand brand) {
 		this.brand = brand;
 	}
 
-	public String getModel() {
+	public Model getModel() {
 		return model;
 	}
 
-	public void setModel(String model) {
+	public void setModel(Model model) {
 		this.model = model;
 	}
 
@@ -147,28 +135,27 @@ public class TransporterView {
 		this.carAge = carAge;
 	}
 
-	public String getCityArrive() {
+	public City getCityArrive() {
 		return cityArrive;
 	}
 
-	public void setCityArrive(String cityArrive) {
+	public void setCityArrive(City cityArrive) {
 		this.cityArrive = cityArrive;
 	}
 
-	public String getDateArrive() {
+	public LocalDateTime getDateArrive() {
 		return dateArrive;
 	}
 
-	public void setDateArrive(String dateArrive) {
+	public void setDateArrive(LocalDateTime dateArrive) {
 		this.dateArrive = dateArrive;
 	}
 
-	public String getStatus() {
+	public Status getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Status status) {
 		this.status = status;
 	}
-	
 }

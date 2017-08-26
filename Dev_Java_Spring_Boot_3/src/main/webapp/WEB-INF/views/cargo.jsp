@@ -55,11 +55,7 @@
 					<div class="form-group row">
 						<label class="col-2 col-form-label">Goods:</label>
 						<div class="col-10">
-							<select name="goods" class="form-control">
-								<c:forEach var="goods" items="${goodss}">
-									<option value="${goods}">${goods}</option>
-								</c:forEach>
-							</select>
+							<form:select path="goods" items="${goodss}" class="form-control"/>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -89,21 +85,13 @@
 					<div class="form-group row">
 						<label class="col-2 col-form-label">City from:</label>
 						<div class="col-10">
-							<select name="cityFrom" class="form-control">
-								<c:forEach var="city" items="${cities}">
-									<option value="${city}">${city}</option>
-								</c:forEach>
-							</select>
+							<form:select path="cityFrom" items="${cities}" class="form-control"/>
 						</div>
 					</div>
 					<div class="form-group row">
 						<label class="col-2 col-form-label">City to:</label>
 						<div class="col-10">
-							<select name="cityTo" class="form-control">
-								<c:forEach var="city" items="${cities}">
-									<option value="${city}">${city}</option>
-								</c:forEach>
-							</select>
+							<form:select path="cityTo" items="${cities}" class="form-control"/>
 						</div>
 					</div>
 					<div class="form-group row">
@@ -115,7 +103,6 @@
 					<div class="form-group row">
 						<div class="col-10 offset-sm-2">
         					<button type="submit" class="btn btn-outline-success btn-sm">Save</button>
-        					<a href="/admin/cargo/cancel" class="btn btn-outline-warning btn-sm">Cancel</a>
       					</div>
 					</div>
 				</form:form>

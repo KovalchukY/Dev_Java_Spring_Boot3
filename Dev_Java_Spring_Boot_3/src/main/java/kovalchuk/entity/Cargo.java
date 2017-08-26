@@ -1,4 +1,4 @@
-package kovalchuk.entity;
+ package kovalchuk.entity;
 
 import java.math.BigDecimal;
 

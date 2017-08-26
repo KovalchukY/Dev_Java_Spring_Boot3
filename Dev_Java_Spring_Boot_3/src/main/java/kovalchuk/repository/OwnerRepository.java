@@ -12,6 +12,9 @@ public interface OwnerRepository extends JpaNameRepository<Owner, Integer> {
 	
 	@Query("SELECT new kovalchuk.model.view.OwnerView(o.id, o.name, o.phone, o.count, o.address) FROM Owner o")
 	List<OwnerView> findAllView();
+	
+	@Query("SELECT o FROM Owner o WHERE o.id=?1")
+	Owner findOneRequest(Integer id);
 }
 
 

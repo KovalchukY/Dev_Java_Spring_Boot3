@@ -2,7 +2,7 @@ package kovalchuk.service;
 
 import java.util.List;
 
-import kovalchuk.entity.Transporter;
+import kovalchuk.model.request.TransporterRequest;
 import kovalchuk.model.view.TransporterView;
 
 
@@ -16,7 +16,9 @@ public interface TransporterService {
 		
 		List<TransporterView> findAllView();
 		
-		void save(Transporter transporter);
+		void save(TransporterRequest request);
 
 		void delete(Integer id);
+
+		TransporterRequest findOne(Integer id);
 }

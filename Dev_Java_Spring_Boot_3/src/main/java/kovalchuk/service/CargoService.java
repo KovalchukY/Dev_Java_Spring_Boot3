@@ -2,7 +2,7 @@ package kovalchuk.service;
 
 import java.util.List;
 
-import kovalchuk.entity.Cargo;
+import kovalchuk.model.request.CargoRequest;
 import kovalchuk.model.view.CargoView;
 
 public interface CargoService {
@@ -13,8 +13,10 @@ public interface CargoService {
 	
 	List<CargoView> findAllView();
 	
-	void save(Cargo cargo);
+	void save(CargoRequest request);
 
 	void delete(Integer id);
+
+	CargoRequest findOne(Integer id);
 	
 }

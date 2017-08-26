@@ -22,6 +22,9 @@ public interface TransporterRepository extends JpaNameRepository<Transporter, In
 	@Query("SELECT new kovalchuk.model.view.TransporterView(t.rate, t.maxWeight, t.photoUrl, t.version, t.name, t.count, t.age, t.phone, b.name, m.name, t.carAge, cArrive.name) FROM Transporter t JOIN t.brand b JOIN t.model m JOIN t.cityArrive cArrive")
 	List<TransporterView> findAllView();
 
+	@Query("SELECT t FROM Transporter t JOIN FETCH t.brand b JOIN FETCH t.model m JOIN FETCH t.cityArrive cArrive WHERE t.id=?1")
+	Transporter findOneRequest(Integer id);
+
 
 
 }
